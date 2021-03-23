@@ -117,7 +117,7 @@ void initPop(POPULATION *p)
 	 pj->chrom = (int *) calloc (p->lchrom, sizeof(int));
 
 	 for (j = 0; j < p->lchrom; j++){
-		pi->chrom[j] = random(6)+1;
+		pi->chrom[j] = rand()*6+1;
 	 }
 	 pi->fitness  = eval(p, pi);
 
