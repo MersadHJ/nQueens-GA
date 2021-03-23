@@ -17,6 +17,7 @@ main(int argc, char* argv[])
     p->gen = 0;
     if (argc != 2) erfunc("Usage: ga <inputfile name> ", argc);
     initialize(argv, p);
+    printf(" gen        max        avg        min  heg        hef hei    fitness\n");
     while (p->gen < p->maxGen) {
         p->gen++;
         generation(p, p->gen);
