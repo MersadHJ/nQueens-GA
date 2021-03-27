@@ -17,10 +17,12 @@ void statistics(POPULATION *p, IPTR pop)
     pi = &(pop[i]);
     p->sumFitness += pi->fitness; 
     if (p->max < pi->fitness) {
-      p->max = pi->fitness;   p->maxi = i;
+      p->max = pi->fitness;
+      p->maxi = i;
     }
     if (p->min > pi->fitness){
-      p->min = pi->fitness;   p->mini = i;
+      p->min = pi->fitness;   
+      p->mini = i;
     }
   }
   p->avg = p->sumFitness / (double) p->popSize;

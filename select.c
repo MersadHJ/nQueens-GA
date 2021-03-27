@@ -11,7 +11,7 @@ int roulette(IPTR pop, double sumFitness, int popsize)
   double rand,partsum;
   int i;
 
-  partsum = 0.0; i = 0;
+  partsum = 0.0; 
   rand = f_random() * sumFitness; 
   
   i = -1;
