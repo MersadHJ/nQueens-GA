@@ -115,10 +115,26 @@ void initPop(POPULATION *p)
 
 	 pj = &(p->np[i]);
 	 pj->chrom = (int *) calloc (p->lchrom, sizeof(int));
+    
+	 // arr = [1,2,3,...,n]
+     int* arr = (int *) malloc(p->lchrom * sizeof(int));
+	 for (int k = 0; k < p->lchrom; k++)
+		 arr[k] = k + 1;
 
-	 for (j = 0; j < p->lchrom; j++){
-		pi->chrom[j] = rand()*6+1;
+	 int last = p->lchrom;
+	 int j =  0;
+	 while(last > 0)
+	 {
+		int rndi = rand() % (last);
+		pi->chrom[j] = arr[rndi];
+		arr[rndi] = arr[last - 1];
+		last--;
+		j++;
 	 }
+
+	 //for (j = 0; j < p->lchrom; j++){
+	 //		pi->chrom[j] = rand()*6+1;
+	 //}
 	 pi->fitness  = eval(p, pi);
 
   }
