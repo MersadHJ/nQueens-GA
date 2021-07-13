@@ -11,29 +11,30 @@ int cmp(const void* a, const void* b) {
 double eval(POPULATION *p, IPTR pj) 
      /* Called from gen.c and init.c */
 {
-  double val;
-  int t1 = 0;
-  int t2 = 0;
+  double val = 0;
   int size = p->lchrom;
-  int* f1 = (int*)malloc(size * (sizeof(int)));
-  int* f2 = (int*)malloc(size * (sizeof(int)));
-  for (int i = 0; i < size; i++)
-  {
-      f1[i] = pj->chrom[i] - i;
-      f2[i] = (size + 1) - pj->chrom[i] - i;
 
-  }
-  qsort(f1, size, sizeof(int), cmp);
-  qsort(f2, size, sizeof(int), cmp);
-  for (int i = 1; i < size; i++)
+  for (int i = 0; i < size; i++) 
   {
-    if(f1[i] == f1[i-1]) t1 = t1+1;
-    if(f2[i] == f2[i-1]) t2 = t2+1;
+    int c1 = i + 1;
+    int r1 = pj->chrom[i];
+    
+    for (int j = 0; j < size; j++)
+    {
+        if (i == j)
+            continue;
+
+        int c2 = j + 1;
+        int r2 = pj->chrom[j];
+
+        if ((r1 == r2) || (c1 == c2) || (abs(c2 - c1) == abs(r2 - r1)))
+        {
+            val += 1;
+        }
+    }
   }
-  decode(pj, 0, p->lchrom); 
-  val = (p->lchrom-1) - (t1 + t2);
   
-  return val;
+  return ((p->lchrom * (p->lchrom - 1)) - val);
 }
 
 double decode(IPTR pj, int index, int size)

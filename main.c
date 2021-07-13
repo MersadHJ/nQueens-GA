@@ -29,6 +29,10 @@ main(int argc, char* argv[])
     }
 
     printf("====================================\n");
+    printf(" %3d %3d %10.2lf \n",
+        p->highestEverGen,
+        p->highestEverIndex,
+        p->highestEverFitness);
     for (int i = 0; i < p->lchrom; i++)
     {
         printf("%d,", p->highestEverChrom[i]);

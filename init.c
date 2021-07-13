@@ -94,6 +94,7 @@ void initData(char *Ifile, POPULATION *p)
   p->highestEverFitness = 0.0;
   p->highestEverGen = 0;
   p->highestEverIndex = 0;
+  p->highestEverChrom = (int*) malloc(sizeof(int) * p->lchrom);
 
 }
 

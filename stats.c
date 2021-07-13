@@ -36,6 +36,7 @@ void statistics(POPULATION *p, IPTR pop)
         printf("%d,", pi->chrom[i]);
     }
     printf("\n");
-    p->highestEverChrom = pi->chrom;
+    for(int i=0; i<p->lchrom; i++)
+      p->highestEverChrom[i] = pi->chrom[i];
   }
 }
