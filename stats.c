@@ -30,5 +30,12 @@ void statistics(POPULATION *p, IPTR pop)
     p->highestEverFitness = p->max; 
     p->highestEverGen = p->gen; 
     p->highestEverIndex = p->maxi;
+    pi = &(pop[p->maxi]);
+    for (int i = 0; i < p->lchrom; i++)
+    {
+        printf("%d,", pi->chrom[i]);
+    }
+    printf("\n");
+    p->highestEverChrom = pi->chrom;
   }
 }

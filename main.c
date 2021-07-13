@@ -17,7 +17,7 @@ main(int argc, char* argv[])
     p->gen = 0;
     if (argc != 2) erfunc("Usage: ga <inputfile name> ", argc);
     initialize(argv, p);
-    printf(" gen        max        avg        min  heg        hef hei    fitness\n");
+    printf(" gen        max        avg        min  HEG HEI        HEF    \n");
     while (p->gen < p->maxGen) {
         p->gen++;
         generation(p, p->gen);
@@ -27,4 +27,11 @@ main(int argc, char* argv[])
         p->op = p->np;
         p->np = tmp;
     }
+
+    printf("====================================\n");
+    for (int i = 0; i < p->lchrom; i++)
+    {
+        printf("%d,", p->highestEverChrom[i]);
+    }
+    printf("\n");
 }

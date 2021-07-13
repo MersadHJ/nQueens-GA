@@ -11,7 +11,7 @@ int cmp(const void* a, const void* b) {
 double eval(POPULATION *p, IPTR pj) 
      /* Called from gen.c and init.c */
 {
-  int val;
+  double val;
   int t1 = 0;
   int t2 = 0;
   int size = p->lchrom;
@@ -30,8 +30,8 @@ double eval(POPULATION *p, IPTR pj)
     if(f1[i] == f1[i-1]) t1 = t1+1;
     if(f2[i] == f2[i-1]) t2 = t2+1;
   }
-  //val = decode(pj, 0, p->lchrom); 
-  val = t1 + t2;
+  decode(pj, 0, p->lchrom); 
+  val = (p->lchrom-1) - (t1 + t2);
   
   return val;
 }

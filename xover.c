@@ -95,7 +95,7 @@ void crossover(POPULATION *p, IPTR p1, IPTR p2, IPTR c1, IPTR c2)
     }
   }
 
-  for (int k = 0; k < size / 4; k++)
+  for (int k = 0; k < size; k++)
   {
       if (flip(p->pMut))
       {
