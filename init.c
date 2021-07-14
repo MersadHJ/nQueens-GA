@@ -96,6 +96,7 @@ void initData(char *Ifile, POPULATION *p)
   p->highestEverIndex = 0;
   p->highestEverChrom = (int*) malloc(sizeof(int) * p->lchrom);
 
+  p->pMutCurrent = 1; 
 }
 
 

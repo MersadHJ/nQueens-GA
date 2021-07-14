@@ -23,6 +23,7 @@ typedef struct {
 
   double pCross;        /* probability of Xover */
   double pMut;          /* probability of Mutation */
+  double pMutCurrent;
   double randomseed;  
 
   
@@ -39,3 +40,9 @@ typedef struct {
 
   char  *ofile;  /* output File name */
 } POPULATION;
+
+struct rank_index {
+    int rank;
+    int index;
+    int fitness;
+} typedef RankIndex;

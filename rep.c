@@ -24,12 +24,11 @@ void report(int gen, POPULATION *p, IPTR  pop)
 
 void rawStat(FILE *fp, POPULATION *p, IPTR pop)
 {
-  fprintf(fp," %3d %10.2lf %10.2lf %10.2lf ", p->gen, p->max,
+  fprintf(fp,"%3d,%10.2lf,%10.2lf,%10.2lf,", p->gen, p->max,
 	  p->avg, p->min);
-  fprintf(fp," %3d %3d %10.2lf \n",
+  fprintf(fp,"%3d,%3d,%10.2lf\n",
 	  p->highestEverGen,
 	  p->highestEverIndex,
 	  p->highestEverFitness);
-  // fprintf(fp," %10.2lf\n", pop[p->maxi].fitness);
 }
 
