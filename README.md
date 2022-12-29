@@ -2,22 +2,23 @@
 solving nQueens problem using genetic algorithm.
 ## Usage
 The hyperparameters are set in infile with this order:
+```
 population size
 chromosome length (N)
 maximum no. of generations.
 crossover probability
 mutation probability 
 output file name
-
+```
 for example :
-
+```
 50
 20
 1000
 0.66
 0.009
 ofile.txt
-
+```
 
 After setting these hyperparameters you can run the program by giving the name of the input file to it.
 
